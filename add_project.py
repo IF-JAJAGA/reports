@@ -34,19 +34,19 @@ HTML = $(shell cat config)\n\
 \n\
 all: '+project_name+'.pdf\n\
 \n\
-'+project_name+'.pdf: '+project_name+'.html\n\
+'+project_name+'.pdf: '+project_name+'.out.html\n\
 \t@echo "Compiling PDF..."\n\
 \t@weasyprint $^ $@\n\
 \n\
-'+project_name+'.html: $(HTML)\n\
+'+project_name+'.out.html: $(HTML)\n\
 ifeq ($(strip $(HTML)),)\n\
 \t@echo "Error: No file to compile, check config file"\n\
 \t@exit 1\n\
 else\n\
-\t$(shell cat $^ > '+project_name+'.html)\n\
+\t$(shell cat $^ > '+project_name+'.out.html)\n\
 endif\n\
 \n\
 clean:\n\
-\t@rm '+project_name+'.{pdf,html}\n\
+\t@rm '+project_name+'.{pdf,out.html}\n\
 \n\
 ')
