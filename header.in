@@ -1,2 +1,57 @@
 <!DOCTYPE html>
-
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<style>
+		@page {
+			margin: 2cm;
+			@top-left {
+				font-size: 0.8em;
+				content: "GUIDON J.- BERTRON A.- MARCHAL J.- PARISSE A.- MONOD G.-COURJAULT A.- REVEL A.";
+			}
+			@bottom-center {
+				content: counter(page) " / " counter(pages);
+			}
+		}
+		@page:first {
+			position: relative;
+			@top-left {
+				content: none
+			}
+			@bottom-center {
+				content: none
+			}
+		}		
+		body {
+			height:100%;
+			text-align: justify;
+		}
+		.pbreaker-auto {
+			page-break-after: auto;
+		}
+		.pbreaker {
+			page-break-after: always;
+		}
+		.pbroken-auto {
+			page-break-before: auto;
+		}
+		.pbroken {
+			page-break-before: always;
+		}
+		.unpbreakable {
+			page-break-inside: avoid;
+		}
+		.main-title {
+			position: absolute;
+			height: 20%;
+			top:50%;
+			margin-top:-30%;
+		}
+		</style>
+		<title>{{title}}{{#subtitle}} - {{subtitle}}{{/subtitle}}</title>
+	<head>
+	<body>
+		<div class="main-title pbreaker">
+			<h1>{{title}}</h1>
+			{{#subtitle}}<small>{{subtitle}}</small>{{/subtitle}}
+		</div>

@@ -2,6 +2,7 @@
 
 import os
 import shutil
+import pystache
 
 project_name = input('Enter project\'s name: ')
 
@@ -18,9 +19,11 @@ else:
     config = os.path.join(project_name, 'config')
     makefile = os.path.join(project_name, 'Makefile')
 
-    shutil.copyfile(header_in, header)
     shutil.copyfile(footer_in, footer)
 
+    with open(header_in,'r') as f:
+        with open(header, 'w') as f2:
+            f2.write(pystache.render(f.read(), {'title': project_name, 'subtitle': ''}))
     with open(config, 'w') as f:
         f.write('header.html\nfooter.html')
     with open(makefile, 'w') as f:
@@ -43,7 +46,7 @@ ifeq ($(strip $(HTML)),)\n\
 \t@echo "Error: No file to compile, check config file"\n\
 \t@exit 1\n\
 else\n\
-\t$(shell cat $^ > '+project_name+'.out.html)\n\
+\t$(shell cat $^ > $@)\n\
 endif\n\
 \n\
 clean:\n\
