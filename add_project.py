@@ -3,8 +3,15 @@
 import os
 import shutil
 import pystache
+import locale
+import datetime
 
 project_name = input('Enter project\'s name: ')
+project_title = input('Enter report\'s main title: ')
+project_subtitle = input('Enter report\'s subtitle (if necessary): ')
+
+if project_title == "":
+    project_title = project_name
 
 try:
     os.mkdir(project_name)
@@ -18,12 +25,20 @@ else:
     footer = os.path.join(project_name, 'footer.html')
     config = os.path.join(project_name, 'config')
     makefile = os.path.join(project_name, 'Makefile')
+    date = ""
+    date_now = datetime.date.today()
+    try:
+        locale.setlocale(locale.LC_TIME, 'fr_FR.utf8')
+        date = str(date_now.day) + ' ' + locale.nl_langinfo(locale.MON_1+(date_now.month-1)) + ' ' + str(date_now.year)
+    except locale.Error:
+        print('Unable to select french locale, keeping default')
+        date = date_now.strftime('%d/%m/%y')
 
     shutil.copyfile(footer_in, footer)
 
     with open(header_in,'r') as f:
         with open(header, 'w') as f2:
-            f2.write(pystache.render(f.read(), {'title': project_name, 'subtitle': ''}))
+            f2.write(pystache.render(f.read(), {'title': project_title, 'subtitle': project_subtitle, 'date': date}))
     with open(config, 'w') as f:
         f.write('header.html\nfooter.html')
     with open(makefile, 'w') as f:
