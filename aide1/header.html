@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<style>
+		@page {
+			margin: 2cm;
+			@top-left {
+				font-size: 0.8em;
+				content: "GUIDON J.- BERTRON A.- MARCHAL J.- PARISSE A.- MONOD G.-COURJAULT A.- REVEL A.";
+			}
+			@bottom-center {
+				content: counter(page) " / " counter(pages);
+			}
+		}
+		@page:first {
+			@top-left {
+				content: none
+			}
+			@bottom-center {
+				content: none
+			}
+		}		
+		body {
+			width:100%;
+		}
+		.pbreaker-auto {
+			page-break-after: auto;
+		}
+		.pbreaker {
+			page-break-after: always;
+		}
+		.pbroken-auto {
+			page-break-before: auto;
+		}
+		.pbroken {
+			page-break-before: always;
+		}
+		.unpbreakable {
+			page-break-inside: avoid;
+		}
+		.cover {
+			width: 100%;
+			height: 30%;
+			margin:0;
+			margin-top: 40%;
+		}
+		.main-title {
+			text-align: center;
+		}
+		.logo {
+			text-align: center;
+			margin-top: 25%;
+		}
+		.logo>.insa {
+			width: 50%;
+		}
+		.names {
+			height: 10%;
+			margin-top: 30%;
+		}
+		.names>p {
+			text-align: center;
+		}
+		.names>ul {
+			margin-top:0;
+			width: 25%;
+		}
+		.names>ul.center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		.float-stop {
+			clear: both;
+		}
+		ul.unstyled {
+			list-style-type: none;
+		}
+		</style>
+		<title>Aide à la décision - optimisation de la production d&#x27;un atelier</title>
+	<head>
+	<body>
+		<div class="cover pbreaker">
+			<div class="main-title">
+				<h1>Aide à la décision</h1>
+				<small>optimisation de la production d&#x27;un atelier</small>
+				<p>7 octobre 2014</p>
+			</div>
+			<div class="logo">
+				<img class="insa" src="../logo-insa-ng.png"/>
+			</div>
+			<div class="names">
+				<p><strong>Hexanome 4201</strong></p>
+				<ul class="unstyled left">
+					<li>MARCHAL Jean</li>
+					<li>COURJAULT Amaury</li>
+				</ul>
+				<ul class="unstyled right">
+					<li>MONOD Gustave</li>
+					<li>REVEL Alberto</li>
+				</ul>
+				<ul class="unstyled center">
+					<li>GUIDON Jérôme</li>
+					<li>PARISSE Alicia</li>
+					<li>BERTRON Aurélien</li>
+				</ul>
+				<div class="float-stop"></div>
+			</div>
+		</div>
