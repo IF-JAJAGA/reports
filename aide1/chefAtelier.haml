@@ -1,19 +1,20 @@
 %h1 Responsable d'atelier
 
 %p
-	Cette personne veut fabriquer le plus de produits possible. La fonction Ã  maximiser est donc celle donnant la "somme des produits fabriquÃ©s".
+	Cette personne veut fabriquer le plus de produits possible. La fonction à maximiser est donc celle donnant la "somme des produits fabriqués".
 	
 	Mise en oeuvre --------------------
-	Ceci revient Ã  minimiser la fonction f opposÃ©e reprÃ©sentÃ©e par le vecteur [-1 ;  -1 ; -1 ; -1 ; -1 ; -1].
-	Par rapport au bÃ©nÃ©fice, le problÃšme est linÃ©aire : plus on fabrique des produits, plus on augmente le bÃ©nÃ©fice.
+	Ceci revient à minimiser la fonction f opposée représentée par le vecteur [-1 ;  -1 ; -1 ; -1 ; -1 ; -1].
+	Par rapport au bénéfice, le problème est linéaire : plus on fabrique des produits, plus on augmente le bénéfice.
 	
 	
-	RÃ©sultats -------------------------
-	Le rÃ©sultat optimal correspond donc Ã  la capacitÃ© maximale de production au vu des contraintes de production (stock), le calcul donne le vecteur colonne : [0.0000; 20.40816, 0,0000, 0.0000, 242.50000, 94.18367]
-	Pour produire beaucoup, il s'agit donc de mettre de cotÃ© la fabrication des produits A,C et D et de rÃ©partir la production des 3 autres selon le plan suivant :
-	B = 20.40816,
-	E = 242.50000,
-	F = 94.18367.
+	Résultats -------------------------
+	Si on regarde la courbe, on choisit le point qui permet de fabriquer le plus de produits possible en effectuant le meilleur bénéfice. Ce point est entouré en rouge sur le graphe.
+	Pour produire beaucoup, il s'agit donc de mettre de coté la fabrication des produits A,C et D et de répartir la production des 3 autres selon le plan suivant :
+	B = 56.73203,
+	C = 38.69281,
+	E = 184.46078
+	F = 98.92157.
 
-	Ce plan permet de produire au total 357.09 produits par semaine.
+	Ce plan permet de produire au total 378.81 produits par semaine, en se situant à 92% du bénéfice maximal (résultat renvoyé par matlab).
 
