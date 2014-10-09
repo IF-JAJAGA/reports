@@ -1,20 +1,23 @@
-%h1 Responsable d'atelier
+%meta{:charset => "UTF-8"}
 
-%p
-	Cette personne veut fabriquer le plus de produits possible. La fonction à maximiser est donc celle donnant la "somme des produits fabriqués".
-	
-	Mise en oeuvre --------------------
-	Ceci revient à minimiser la fonction f opposée représentée par le vecteur [-1 ;  -1 ; -1 ; -1 ; -1 ; -1].
-	Par rapport au bénéfice, le problème est linéaire : plus on fabrique des produits, plus on augmente le bénéfice.
-	
-	
-	Résultats -------------------------
-	Si on regarde la courbe, on choisit le point qui permet de fabriquer le plus de produits possible en effectuant le meilleur bénéfice. Ce point est entouré en rouge sur le graphe.
-	Pour produire beaucoup, il s'agit donc de mettre de coté la fabrication des produits A,C et D et de répartir la production des 3 autres selon le plan suivant :
-	B = 56.73203,
-	C = 38.69281,
-	E = 184.46078
-	F = 98.92157.
+%h2 Responsable d'atelier
 
-	Ce plan permet de produire au total 378.81 produits par semaine, en se situant à 92% du bénéfice maximal (résultat renvoyé par matlab).
+%p Cette personne veut fabriquer le plus de produits possible. La fonction à maximiser est donc celle donnant la "somme des produits fabriqués".
+	
+%h3 Mise en oeuvre
 
+%p Ceci revient à minimiser la fonction f opposée représentée par le vecteur [-1 ;  -1 ; -1 ; -1 ; -1 ; -1]. Par rapport au bénéfice, le problème est linéaire : plus on fabrique des produits, plus on augmente le bénéfice.
+	
+	
+%h3 Résultats
+
+%p Si on regarde la courbe, on choisit le point qui permet de fabriquer le plus de produits possible en effectuant le meilleur bénéfice. Ce point est entouré en rouge sur le graphe. Pour produire beaucoup, il s'agit donc de mettre de coté la fabrication des produits <b>A,C et D</b> et de répartir la production des 3 autres selon le plan suivant :
+%ul
+	%li B = 56.73203
+	%li C = 38.69281
+	%li E = 184.46078
+	%li F = 98.92157.
+
+%img{:src => "Images/atelier.png" , :title => "Photo !"}
+
+%p Ce plan permet de produire au total <b>378.81</b> produits par semaine, en se situant à <b>92%</b> du bénéfice maximal (résultat renvoyé par matlab).
