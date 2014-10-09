@@ -22,22 +22,6 @@
   </ul>
 </p>
 <p>
-  <strong>Responsable Comptabilité</strong>
-</p>
-<p>
-  Notre but c'est de trouver un bénéfice maximum. Ce bénéfice dépend des coûts de fonctionnement des machines et des matières premières.
-</p>
-<p>
-  Démarche ----------------
-  Pour calculer le prix des matières premières on utilise la Table de quantité de matières premières par produit multipliée par la table des prix de vente des produits finis (sous formes de matrices). On obtient un vecteur [6,1] qui correspond à ce prix.
-  Pour calculer le coût de fonctionnement des machines, on utilise la Table de coût horaire des machines multipliée par la transposée de la table des temps unitaires d'usinage d'un produit sur une machine. On obtient un vecteur [6,1] qui correspond à ce coût.
-  Finalement, on soustrait ces coûts aux revenus de la vente des produits finis.
-  f = ( T41 - (T42 * T2 + T5 * T1')
-  Avec f la fonction qui représente les bénéfices en fonction des produits.
-  Mise en oeuvre --------------------
-  Pour obtenir la solution, on a créé une fonction sur Matlab qui sert à calculer la f
-</p>
-<p>
   <strong>Responsable Commercial</strong>
 </p>
 <p>
