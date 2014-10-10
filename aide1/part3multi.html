@@ -1,10 +1,32 @@
 <h2>Troisième partie : analyse multicritère</h2>
 <div>
-	Pour étudier les propositions qui ont été faites en ce qui concerne la gestion de l'atelier, nous avons choisi d'utiliser la méthode <b>Electre I</b>.
-	<br>En effet il nous est demandé de trouver la meilleure solution et c'est justement ce que cette méthode permet de trouver.
+	
+	<h3>Première partie</h3>
+	<p>
+		<br>Pour étudier les propositions qui ont été faites en ce qui concerne la gestion de l'atelier, nous avons choisi d'utiliser la méthode <b>Electre I</b>.
+		<br>En effet il nous est demandé de trouver la meilleure solution et c'est justement ce que cette méthode permet de trouver.
 
-	<br><br>On a donc commencé par observer si certaines des solutions dominaient les autres. Pour déterminer si une solution en dominait une autre, on vérifie si ses valeurs sont plus élevées qu'une autre solution pour <i>tous</i> les critères. Si c'est le cas, la solution dominée est éliminée des solutions puisqu'elle ne peut pas être la meilleure. 
-	<br>Dans le cas qui nous est présenté, on élimine la solution g qui est dominée par e, c qui est dominée par b et f qui est dominée par h.  
+		<br><br>On a donc commencé par observer si certaines des solutions dominaient les autres. Pour déterminer si une solution en dominait une autre, on vérifie si ses valeurs sont plus élevées qu'une autre solution pour <i>tous</i> les critères. Si c'est le cas, la solution dominée est éliminée des solutions puisqu'elle ne peut pas être la meilleure. 
+		<br>Dans le cas qui nous est présenté, on élimine la solution g qui est dominée par e, c qui est dominée par b et f qui est dominée par h.  
 
-	<br><br> En suite on calcule les matrices de discordance et concordance à partir de cette matrice des jugements qu'on a déjà modifié en enlevant les solutions qui sont fortement dominées, ce qui nous laisse deux matrices avec 5 lignes (correspondantes aux solutions a, b, d, e, h) et 5 colonnes qui correspondent aussi aux mêmes solutions.  
+		<br><br>En suite on calcule les matrices de discordance et concordance à partir de cette matrice des jugements qu'on a déjà modifié en enlevant les solutions qui sont fortement dominées, ce qui nous laisse deux matrices avec 5 lignes (correspondantes aux solutions a, b, d, e, h) et 5 colonnes qui correspondent aussi aux mêmes solutions.
+		<br><br><b>Matrice de concordance, valeurs sur 4.</b>
+		<img src="/Images/concordance1.png" align="center"> 
+		<br><br><b>Matrice de discordance, valeurs sur 10.</b>
+		<img src="/Images/discordance1.png" align="center"> 
+		
+		<br><br>Avec les matrices qu'on vient de calculer et pour construire notre graphe qui va nous permettre trouver la meilleure solution, on prend un seuil de concordance de 3/4 et un seuil de discordance de 2/10. On obtient un graphe qui ne permet pas de voir laquelle est la meilleure solution parmis les possibles.
+		<img src="" align="center">
+
+		<br><br>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie qu'on va pouvoir eliminer que les relations qui valent 1. On va choisir un seuil de discordance plus grand que 2/10, et en regardant la matrice on choisi un seuil de 4/10 car avec un seuillage au dessous de ça, le graphe reste le même.
+		<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>XXXXXXXXXXXX</b>
+		<img src="" align="center"><br>
+	</p>
+		
+	<h3>Deuxième Partie</h3>
+	<p>
+		<br>PARTIE AVEC LES NOUVEAUX POIDS.
+		
+	</p>
+	
 </div>
