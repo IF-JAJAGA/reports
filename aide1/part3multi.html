@@ -14,13 +14,17 @@
 		<img src="Images/concordance1.png" align="center"> 
 		<br><br><b>Matrice de discordance, valeurs sur 10.</b>
 		<img src="Images/discordance1.png" align="center"> 
+		<br><br>Nous avons pu effectuer tous ces calculs grâce à une fonction que nous avons créée, <i>analyse_multicritère.m</i>
 		
-		<br><br>Avec les matrices qu'on vient de calculer et pour construire notre graphe qui va nous permettre trouver la meilleure solution, on prend un seuil de concordance de 3/4 et un seuil de discordance de 2/10. On obtient un graphe qui ne permet pas de voir laquelle est la meilleure solution parmis les possibles.
-		<img src="" align="center">
+		<br><br>Avec les matrices qu'on vient de calculer et pour construire notre graphe qui va nous permettre trouver la meilleure solution, on prend un seuil de concordance de 3/4 et un seuil de discordance de 2/10. On obtient un graphe qui ne nous permet pas d'obtenir la meilleure solution : en effet les solutions a, b et e sont toutes les trois des solutions non dominées pour les valeurs de ces seuils choisis.
 
-		<br><br>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie qu'on va pouvoir eliminer que les relations qui valent 1. On va choisir un seuil de discordance plus grand que 2/10, et en regardant la matrice on choisi un seuil de 4/10 car avec un seuillage au dessous de ça, le graphe reste le même.
-		<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>XXXXXXXXXXXX</b>
-		<img src="" align="center"><br>
+		<br><br>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie que seules deux relations (valant 1) ne seront pas choisies. Cela produirait une mauvaise modélisation. On décide donc de ne pas modifier le seuil de concordance mais plutôt celui de discordance. On va donc choisir un seuil de discordance plus grand que 2/10 : 
+		<ul>
+			<li>Si on choisit d'augmenter le seuil de discordance à 3/10, aucun changement n'apparaît (visible sur le schéma ci-dessous),</li>
+			<li>Si on choisit d'augmenter le seuil de discordance à 4/10, on voit apparaître une solution meilleure que toutes les autres et c'est ce que l'on cherche.</li>	
+		</ul>
+		<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>a</b>.
+		<img src="Images/part3_dominance_schema.png" align="center"><br>
 	</p>
 		
 	<h3>Deuxième Partie</h3>
