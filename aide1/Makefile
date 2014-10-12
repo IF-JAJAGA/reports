@@ -3,12 +3,14 @@
 
 # HTML Files:
 HTML = $(shell cat config)
+CSS  = aide1.css
 
 all: aide1.pdf
 
 aide1.pdf: aide1.out.html
 	@echo "Compiling PDF..."
-	@weasyprint $^ $@
+	@echo $^ $@
+	@weasyprint $^ $@ -s $(CSS)
 
 aide1.out.html: $(HTML)
 ifeq ($(strip $(HTML)),)
