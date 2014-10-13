@@ -1,24 +1,30 @@
 <div class="benefice">
 	<h2>Responsable Comptabilité</h2>
+
 	<p>
 		Notre but en tant que respondable de la comptabilité est de trouver un bénéfice maximum. Ce bénéfice dépend des coûts de fonctionnement des machines et des matières premières utilisées pour fabriquer les produits.
 	</p>
+
 	<h3>Démarche suivie</h3>
-	<p>	Pour calculer le prix des matières premières on utilise la <i>Table de quantité de matières premières par produit</i> multipliée par la <i>table des prix de vente des produits finis</i> (sous formes de matrices). On obtient un vecteur [6,1] qui correspond à ce prix.
+
+	<p>Pour calculer le prix des matières premières on utilise la <i>table de quantité de matières premières par produit</i> multipliée par la <i>table des prix de vente des produits finis</i> (sous formes de matrices). On obtient un vecteur [6,1] qui correspond à ce prix.
 		<br>Pour calculer le coût de fonctionnement des machines, on utilise la <i>Table de coût horaire des machines</i> multipliée par la transposée de la <i>Table des temps unitaires d'usinage d'un produit sur une machine</i>. On obtient un vecteur [6,1] qui correspond à ce coût.
 		<br>Finalement, on soustrait ces coûts aux revenus de la vente des produits finis.
 		<br>On a choisi cette formule car on calcule simplement la différence entre les recettes et les coûts de fabrication.
 		<br>f = ( T41 - (T42 * T2 + T5 * T1')
 		<br>Avec f la fonction qui représente les bénéfices en fonction des produits.
 	</p>
+
 	<h3>Mise en oeuvre</h3>
+
 	<p>
 		Pour obtenir la solution, on a créé une fonction sur Matlab qui sert à calculer la fonction f. Puis on a utilisé la fonction linprog avec la fonction f multipliée par (-1) puisque linprog minimise les valeurs d'une fonction et que l'on souhaite maximiser notre fonction de bénéfice.
 		<br>Par la suite, nous avons introduit au niveau des autres responsables une contrainte liée au bénéfice. Dans la matrice A des contraintes, on introduit une ligne correspondant à notre fonction de bénéfice et dans la matrice B des contraintes, on ajoute un certain pourcentage du bénéfice maximal que nous venons de calculer.
 		<br>Pour prouver que cet ajout de contraintes ne modifie pas nos résultats, nous avons effectué de la même manière que les autres responsables une boucle. Celle-ci teste la valeur maximale du bénéfice quand on ajoute la contrainte concernant le pourcentage du bénéfice, qui varie de 1 à 100%.
 	</p>
+
 	<figure class="figure center">
 		<img src="Images/graphe_comptable.jpg" />
-		<figcaption>Bénéfice maximal en fonction de la contrainte de bénefice maximum de 1 à 100%</figcaption>
+		<figcaption class="caption">Bénéfice maximal en fonction de la contrainte de bénefice maximum de 1 à 100%</figcaption>
 	</figure>
 </div>
