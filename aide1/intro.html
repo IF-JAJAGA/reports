@@ -19,9 +19,8 @@
 			Après avoir obtenu ces solutions, notre analyse comprendra un plan de production optimal global (mais inatteignable en vue des contraintes), un tableau récapitulant l'impact d'un angle de vue sur les autres, et enfin une solution de compromis selon les tendances des satisfactions de chacun des angles de vue.
 		</p>
 		<p>
-			Enfin, à partir de 8 solutions intéressantes et 4 critères sélectionnés, nous avons utilisé la méthode d'Electre 1
+			Enfin, à partir de 8 solutions intéressantes et 4 critères sélectionnés, nous avons utilisé la méthode d'Electre 1 pour choisir quelle est la meilleure solution parmi ces 8 choix.
 		</p>
-		<img src="images/point-mire.png" />
 	</div>
 
 	<h1>Première partie: programmation linéaire multicritère</h1>
@@ -46,18 +45,4 @@
 			<li>ZeroV - vecteur créé pour représenter les contraintes qui concernent les solutions qu'on veut trouver (lb dans linprog)</li>
 		</ul>
 	</div>
-
-	<h2>Responsable Commercial</h2>
-
-</p>
-<p>
-	Notre but est de faire en sorte que la production de deux familles de produits ({A, B, C} et {D, E, F}) soient équivalentes. Autrement dit, que l'on retrouve ces produits en quantités les plus égales possibles.
-	Démarche ----------------
-	Afin de faire en sorte que les deux familles soient produits en même quantité, on tente de minimiser la fonction représentant la différence des quantités de produits appartenant à la première famille et de la deuxième famille.
-	Les solutions obtenues ne dépendent que des contraintes communes à tous les membres de l'entreprise.
-	Mise en oeuvre ----------------
-	Afin de réaliser ce calcul, la matrice f entrée dans linprog est une matrice colone simple permettant la somme des trois premiers membres et la soustraction des trois derniers membres. Autrement dit, trois 1 en tête de la matrice puis trois -1 pour finir. Pour la deuxième équation à réaliser, il suffit de prendre l'opposé de ce même vecteur.
-	Problème pour réaliser cela, la fonction linprog considère que les chiffres négatifs sont plus petits que zéro (normal), et elle ne prend pas en compte les valeurs absolus.
-	Pour y remédier, on recherche la solution correspondant au minimum pour la fonction expliquée ci-dessus puis la solution correspondant au minimum de l'opposé de cette même fonction. On trouve ainsi deux solutions dont on fait ensuite la moyenne pour trouver la solution finale qui correspond.
-</p>
 </div>
