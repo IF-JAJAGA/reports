@@ -10,16 +10,29 @@
 		<br>Dans le cas qui nous est présenté, on élimine la solution g qui est dominée par e, c qui est dominée par b et f qui est dominée par h.
 	</p>
 
+	<p>Avec les solutions qui nous restent, on construit les matrices de concordances et de discordance :
+	</p>
+	<figure class="figure center">
+		<img src="Images/concordance1.png"/>
+		<figcaption class="caption">Matrice de concordance</figcaption>
+	</figure>
+	<figure class="figure center">
+		<img src="Images/discordance1.png"/>
+		<figcaption class="caption">Matrice de discordance</figcaption>
+	</figure>
+	<p>Gr&acirc;ce &agrave;  ces matrices, on peut construire le sch&eacute;ma de dominances pour diff&eacute;rents seuils de concordance et de discordance. On commence par choisir c = 3/4 et d = 2/10. Cela nous permet d'obtenir la premiere moiti&eacute; du sch&eacute;ma, mais pas la solution optimale.
+	</p>
+	<figure class="figure center">
+		<img src="Images/part3_dominance_schema.png" />
+		<figcaption class="caption">Schéma des dominances</figcaption>
+	</figure>
+
 	<p>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie que seules deux relations (valant 1) ne seront pas choisies. Cela produirait une mauvaise modélisation. On décide donc de ne pas modifier le seuil de concordance mais plutôt celui de discordance. On va donc choisir un seuil de discordance plus grand que 2/10 :
 		<ul>
 			<li>Si on choisit d'augmenter le seuil de discordance à 3/10, aucun changement n'apparaît (visible sur le schéma ci-dessous),</li>
 			<li>Si on choisit d'augmenter le seuil de discordance à 4/10, on voit apparaître une solution meilleure que toutes les autres et c'est ce que l'on cherche.</li>
 		</ul>
 		<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>a</b>.
-		<figure class="figure center">
-			<img src="Images/part3_dominance_schema.png" />
-			<figcaption class="caption">Schéma des dominances</figcaption>
-		</figure>
 	</p>
 
 	<h2>Partie 2</h2>
