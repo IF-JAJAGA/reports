@@ -1,0 +1,24 @@
+<div class="partie1">
+	<h1>Première partie: programmation linéaire multicritère</h1>
+
+	<h2>Mise en oeuvre générale</h2>
+
+	<div>
+		<p>
+			On commence par diviser la table des coûts horaire des machines par 60 pour que toutes nos unités de temps soient en minutes.
+		</p>
+
+		Sous Matlab nous avons créé les tables présentes dans le problème :
+		<ul>
+			<li>T1 - temps unitaire d'usinage d'un produit sur une machine (en min)</li>
+			<li>T2 - quantité de matières premières par produit</li>
+			<li>T3 - quantité maximum de matières premières</li>
+			<li>T41 - prix de vente des produits finis</li>
+			<li>T42 - prix d'achat des matières premières</li>
+			<li>T5 - coût horaire des machines (converti en min)</li>
+			<li>ConstraintsA - matrice créée pour représenter la partie gauche des inéquations des contraintes (A dans linprog)</li>
+			<li>ConstraintsB - matrice créée pour représenter la partie droite des inéquations des contraintes (b dans linprog)</li>
+			<li>ZeroV - vecteur créé pour représenter les contraintes qui concernent les solutions qu'on veut trouver (lb dans linprog)</li>
+		</ul>
+	</div>
+</div>
