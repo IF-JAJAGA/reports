@@ -35,8 +35,27 @@
 		
 	<h3>Deuxième Partie</h3>
 	<p>
-		<br>PARTIE AVEC LES NOUVEAUX POIDS.
-		
+		<br>Une fois que la partie de la programmation multicritères a été faite, nous avons donc décidé d'attribuer les poids suivants : 
+		<ul>
+			<li>Pour g1, le bénéfice, un poids de 5,</li>
+			<li>Pour g2, la gestion du stock, un poids de 3,</li>
+			<li>Pour g3, l'équilibre commercial, un poids de 3,</li>
+			<li>Pour g4, l'utilisation des machines 3 et 5, un poids de 1.</li>
+		</ul>
+		<br>Avec ces poids nous avons décidé de réécrire la matrice des jugements avec : 
+		<ul>
+			<li>Une échelle de 0 à 10 pour les poids de 5,</li>
+			<li>Une échelle de 1,5 à 8,5 pour les poids de 3,</li>
+			<li>Une échelle de 3 à 7 pour les poids de 1.</li>
+		</ul>
+		Pour chaque case du tableau, nous avons donc appliqué la formule suivante :
+		<br>Xn = X * (E2-E1)/(e2-e1) + (e2*E1 - e1*E2)/(e2-e1)
+		<br>Avec E1-E2 l'échelle d'arrivée, e1-e2 l'échelle de départ, X le coefficient le départ et Xn le coefficient d'arrivée.
+		<br>Grâce à cette formule on obtient une nouvelle matrice que lon peut analyser une nouvelle fois avec l'analyse multicritère (voir Partie 1 ci-dessus). 
+		<br><br>L'analyse que l'on fait nous même à des résultats similaires tant au niveau de la matrice de concordance (qui est strictement la même), que de la matrice de discordance (qui diffère légèrement), comme on peut le voir dans le tableau ci-dessous. 
+		<img src=""/><br>
+		<br>Donc si l'on mène de nouveau l'analyse jusqu'au bout on ne vera qu'une seule différence par rapport à l'analyse précédente : la supériorité de la solution <b>a</b> apparaît à partir d'un seuil de concordance de 0.3 au lieu de 0.4. Ce résultat peut-être expliqué par le fait que la solution a présente un fort bénéfice et que cela est accentué par la pondération et le changement d'échelle qu'on ajoute dans cette deuxième partie.
+		<br>On peut donc conclure que la solution a est la meilleure. 
 	</p>
 	
 </div>
