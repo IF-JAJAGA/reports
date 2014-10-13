@@ -15,11 +15,11 @@
 		Ainsi, on peut trouver:
 	</p>
 	<ol>
-		<li>En ligne, la solution du comptable, et en colonne le bénéfice induit</li>
-		<li>En ligne, la solution du responsable d'atelier, et en colonne le nombre total de produits fabriqués</li>
-		<li>En ligne, la solution du responsable des stocks, et en colonne le nombre d'unités de stock utilisées</li>
-		<li>En ligne, la solution du responsable commercial, et en colonne la différence entre produits des deux familles</li>
-		<li>En ligne, la solution du responsable du personnel, avec le nombre de minutes d'utilisation des machines 3 et 5.</li>
+		<li>En ligne 1, la solution du comptable, et en colonne le bénéfice induit</li>
+		<li>En ligne 2, la solution du responsable d'atelier, et en colonne le nombre total de produits fabriqués</li>
+		<li>En ligne 3, la solution du responsable des stocks, et en colonne le nombre d'unités de stock utilisées</li>
+		<li>En ligne 4, la solution du responsable commercial, et en colonne la différence entre produits des deux familles</li>
+		<li>En ligne 5, la solution du responsable du personnel, avec le nombre de minutes d'utilisation des machines 3 et 5.</li>
 	</ol>
 	<p>
 		Note: l'unité de stock est calculée ici en additionnant les matières premières et les produits, pour tenir compte du maximum de place nécessaire. Dans l'idéal, on devrait pouvoir trouver les valeurs optimales (marquées dans la diagonale de la matrice) comme solution parfaite (point de mire). Cependant, ce n'est pas possible de trouver de solution qui puisse satisfaire toutes les contraintes avec ces valeurs. On tente alors de s'en rapprocher le plus possible.
@@ -56,7 +56,7 @@
 		</ul>
 	<p>
 		On remarque que la courbe du stock est en constante augmentation, ce qui signifie que moins le bénéfice est élevé, moins il y a de stock. Cela nous permet de dire que quelque soit la situation choisie pour optimiser les autres critères que le bénéfice, le stock se portera toujours mieux.<br />
-		La courbe rouge, elle, descend de façon quasi linéaire, tandis que les courbes bleues monte rapidement. On se propose donc de choisir la solution entourée sur le graphe, qui correspond à un plan de production de: <code>A = , B = , C = , D = , E = , F = </code>
+		La courbe rouge, elle, descend de façon quasi linéaire, tandis que les courbes bleues montent rapidement. On se propose donc de choisir la solution entourée sur le graphe, qui correspond à un plan de production de: <code>A = , B = , C = , D = , E = , F = </code>
 	</p>
 	<p>De même, en vue de ces augmentations, on attribue un score d'importance à chaque critère, pour la partie suivante d'analyse multicritère: 5 pour le bénéfice, 1 pour la gestion des stocks, 3 pour le commercial et la gestion du personnel, et 4 pour le responsable d'atelier.
 	</p>
