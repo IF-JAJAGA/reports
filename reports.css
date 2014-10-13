@@ -18,6 +18,7 @@
 }
 body {
 	width:100%;
+	font-family: Verdana, sans-serif;
 }
 .pages p {
 	text-align: justify;
@@ -90,4 +91,9 @@ ul.unstyled {
 
 .figure img {
 	max-width: 100%;
+}
+
+.caption {
+	font-style: italic;
+	text-align: center;
 }
