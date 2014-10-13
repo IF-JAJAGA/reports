@@ -1,0 +1,63 @@
+<div class="partie2 pbroken">
+	<h1>Deuxième partie: Programmation linéaire multicritère</h1>
+
+	<p>
+		Pour mettre en relation toutes les solutions optimales trouvées précédemment, nous vous proposons de modéliser, dans un premier temps, les solutions de chacun et les résultats ainsi trouvés.
+	</p>
+
+	<figure class="figure center">
+		<img src="Images/optim.png" />
+		<figcaption class="caption">Matrice des valeurs de chaque indicateur pour chaque solution</figcaption>
+	</figure>
+
+	<p>
+		Dans cette matrice, on peut observer, pour chaque critère (en colonne), la valeur donnée pour toutes les solutions (en ligne).
+		Ainsi, on peut trouver:
+	</p>
+	<ol>
+		<li>En ligne, la solution du comptable, et en colonne le bénéfice induit</li>
+		<li>En ligne, la solution du responsable d'atelier, et en colonne le nombre total de produits fabriqués</li>
+		<li>En ligne, la solution du responsable des stocks, et en colonne le nombre d'unités de stock utilisées</li>
+		<li>En ligne, la solution du responsable commercial, et en colonne la différence entre produits des deux familles</li>
+		<li>En ligne, la solution du responsable du personnel, avec le nombre de minutes d'utilisation des machines 3 et 5.</li>
+	</ol>
+	<p>
+		Note: l'unité de stock est calculée ici en additionnant les matières premières et les produits, pour tenir compte du maximum de place nécessaire. Dans l'idéal, on devrait pouvoir trouver les valeurs optimales (marquées dans la diagonale de la matrice) comme solution parfaite (point de mire). Cependant, ce n'est pas possible de trouver de solution qui puisse satisfaire toutes les contraintes avec ces valeurs. On tente alors de s'en rapprocher le plus possible.
+	</p>
+	<p>
+		Pour uniformiser l'échelle de ces critères, on se propose de passer à un pourcentage de satisfactions, obtenu en posant:
+	</p>
+	<ul>
+		<li>Pour le comptable, le pourcentage du bénéfice maximum possible</li>
+		<li>Pour le responsable d'atelier, le pourcentage du nombre maximum de produits</li>
+		<li>Pour le responsable des stocks, 100% pour sa solution optimale (voir partie 1), 0% pour le pire des cas (si on atteind le nombre maximum de produits déterminé par le responsable d'atelier), ce qui signifie que les valeurs de cet indicateur peuvent dépasser 100%</li>
+		<li>Pour le responsable commercial, 100% si la différence est égale à 0, 0% dans le pire des cas (le maximum de produits dans une seule famille)</li>
+		<li>Et pour le responsable du personnel, 100% pour sa solution optimale (voir partie 1), 0% dans le pire des cas (donné par le n)</li>
+	</ul>
+	<figure class="figure center">
+		<img src="Images/gains.png" />
+		<figcaption class="caption">Matrice de gains: valeurs de chaque indicateur pour chaque solution</figcaption>
+	</figure>
+	<p>
+		On remarque que lorsque le bénéfice décroit (colonne de gauche), le reste des indicateurs augmente de façon plus ou moins monotone. Pour afficher les tendances de ces augmentations, on se propose de faire un graphe montrant, cette fois-ci, l'évolution de tous les indices de satisfaction en fonction de la contrainte d'un bénéfice minimal à effectuer. Pour rendre le graphe plus lisible, on inverse l'axe des abscisses pour que -1 signifie: contrainte de faire 100% du bénéfice et -0.7 contrainte de faire au moins 70% du bénéfice, etc.
+	</p>
+	<figure class="figure center">
+		<img src="Images/precis.png" />
+		<figcaption class="caption">Graphe indicant les indicateurs selon la contrainte de bénéfice</figcaption>
+	</figure>
+	<p>
+		Notes:
+	</p>
+		<ul>
+			<li>la courbe verte (g) correspond à l'indicateur du stock, qui monte énormément (en dehors du champs de vision),</li>
+			<li>la courbe rouge (r) correspond à l'indictateur de l'atelier,</li>
+			<li>la courbe bleue continue (-) correspond à l'indicateur du commercial,</li>
+			<li>la courbe bleue pointillée (--) correspond à l'indicateur du responsable du personnel.</li>
+		</ul>
+	<p>
+		On remarque que la courbe du stock est en constante augmentation, ce qui signifie que moins le bénéfice est élevé, moins il y a de stock. Cela nous permet de dire que quelque soit la situation choisie pour optimiser les autres critères que le bénéfice, le stock se portera toujours mieux.<br />
+		La courbe rouge, elle, descend de façon quasi linéaire, tandis que les courbes bleues monte rapidement. On se propose donc de choisir la solution entourée sur le graphe, qui correspond à un plan de production de: <code>A = , B = , C = , D = , E = , F = </code>
+	</p>
+	<p>De même, en vue de ces augmentations, on attribue un score d'importance à chaque critère, pour la partie suivante d'analyse multicritère: 5 pour le bénéfice, 1 pour la gestion des stocks, 3 pour le commercial et la gestion du personnel, et 4 pour le responsable d'atelier.
+	</p>
+</div>

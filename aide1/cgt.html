@@ -12,17 +12,20 @@
 			<li>f = somme des colonnes M3 et M5 de T1</li>
 			<li>ConstraintsA modifiées</li>
 			<li>ConstraintsB modifiées</li>
-			<li>[] pour Aeq</li>
-			<li>[] pour Beq</li>
+			<li><code>[]</code> pour Aeq</li>
+			<li><code>[]</code> pour Beq</li>
 			<li>une matrice 6x1 de zéros pour lb</li>
 		</ul>
 		Les résultats de cette recherche sont montrés dans la figure suivante :
-		<img src='Images/cgt.png'>
+		<figure class="figure center">
+			<img src="Images/cgt.png" />
+			<figcaption class="caption">Familles de produits en fonction de la contrainte de bénefice maximum de 1 à 100%</figcaption>
+		</figure>
 	</p>
 	<p>
 		On peut voir en vert les résultats pour M3, en rouge pour M5 et en bleu pour M3+M5.
 		Comme on cherche à maximiser le pourcentage du bénéfice (en abcisse) et minimiser le temps d'utilisation (en ordonnée), on marque le point sur M3+M5 qui nous parait optimal, et qui correspond à 80% du bénéfice.
 		On relance donc linprog comme précedemment, mais en modifiant ConstraintsA et ConstraintsB pour empêcher de descendre le bénéfice en dessous de 80%.
-		Les valeurs finales pour les produits sont donc : A = 0, B = 70,9062, C = 0, D = 0, E = 239,0938 et F = 0.
+		Les valeurs finales pour les produits sont donc : <code>A = 0, B = 70,9062, C = 0, D = 0, E = 239,0938</code> et <code>F = 0</code>.
 	</p>
 </div>
