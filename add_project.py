@@ -49,18 +49,20 @@ else:
 \n\
 # HTML Files:\n\
 HTML = $(shell cat config)\n\
+CSS = ../reports.css\n\
 \n\
 all: '+project_name+'.pdf\n\
 \n\
 '+project_name+'.pdf: '+project_name+'.out.html\n\
-\t@echo "Compiling PDF..."\n\
-\t@weasyprint $^ $@\n\
+\t@echo "Compiling $@..."\n\
+\t@weasyprint $^ $@ -s $(CSS)\n\
 \n\
 '+project_name+'.out.html: $(HTML)\n\
 ifeq ($(strip $(HTML)),)\n\
 \t@echo "Error: No file to compile, check config file"\n\
 \t@exit 1\n\
 else\n\
+\t@echo "Generating $@..."\n\
 \t$(shell cat $^ > $@)\n\
 endif\n\
 \n\
