@@ -1,42 +1,44 @@
-<h2>Troisième partie : analyse multicritère</h2>
-<div>
-	
-	<h3>Première partie</h3>
-	<p>
-		<br>Pour étudier les propositions qui ont été faites en ce qui concerne la gestion de l'atelier, nous avons choisi d'utiliser la méthode <b>Electre I</b>.
-		<br>En effet il nous est demandé de trouver la meilleure solution et c'est justement ce que cette méthode permet de trouver.
+<div class="part3multi">
+	<h2>Troisième partie : analyse multicritère</h2>
+	<div>
 
-		<br><br>On a donc commencé par observer si certaines des solutions dominaient les autres. Pour déterminer si une solution en dominait une autre, on vérifie si ses valeurs sont plus élevées qu'une autre solution pour <i>tous</i> les critères. Si c'est le cas, la solution dominée est éliminée des solutions puisqu'elle ne peut pas être la meilleure. 
-		<br>Dans le cas qui nous est présenté, on élimine la solution g qui est dominée par e, c qui est dominée par b et f qui est dominée par h.  
+		<h3>Première partie</h3>
+		<p>
+			<br>Pour étudier les propositions qui ont été faites en ce qui concerne la gestion de l'atelier, nous avons choisi d'utiliser la méthode <b>Electre I</b>.
+			<br>En effet il nous est demandé de trouver la meilleure solution et c'est justement ce que cette méthode permet de trouver.
 
-		<br><br>En suite on calcule les matrices de discordance et concordance à partir de cette matrice des jugements qu'on a déjà modifié en enlevant les solutions qui sont fortement dominées, ce qui nous laisse deux matrices avec 5 lignes (correspondantes aux solutions a, b, d, e, h) et 5 colonnes qui correspondent aussi aux mêmes solutions.
-		<br><br><b>Matrice de concordance, valeurs sur 4.</b>
-		<div class="figure center">
-			<img src="Images/concordance1.png" align="center"> 
-		</div>
-		<br><br><b>Matrice de discordance, valeurs sur 10.</b>
-		<div class="figure center">
-			<img src="Images/discordance1.png" align="center"> 
-		</div>
-		<br><br>Nous avons pu effectuer tous ces calculs grâce à une fonction que nous avons créée, <i>analyse_multicritère.m</i>
-		
-		<br><br>Avec les matrices qu'on vient de calculer et pour construire notre graphe qui va nous permettre trouver la meilleure solution, on prend un seuil de concordance de 3/4 et un seuil de discordance de 2/10. On obtient un graphe qui ne nous permet pas d'obtenir la meilleure solution : en effet les solutions a, b et e sont toutes les trois des solutions non dominées pour les valeurs de ces seuils choisis.
+			<br><br>On a donc commencé par observer si certaines des solutions dominaient les autres. Pour déterminer si une solution en dominait une autre, on vérifie si ses valeurs sont plus élevées qu'une autre solution pour <i>tous</i> les critères. Si c'est le cas, la solution dominée est éliminée des solutions puisqu'elle ne peut pas être la meilleure.
+			<br>Dans le cas qui nous est présenté, on élimine la solution g qui est dominée par e, c qui est dominée par b et f qui est dominée par h.
 
-		<br><br>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie que seules deux relations (valant 1) ne seront pas choisies. Cela produirait une mauvaise modélisation. On décide donc de ne pas modifier le seuil de concordance mais plutôt celui de discordance. On va donc choisir un seuil de discordance plus grand que 2/10 : 
-		<ul>
-			<li>Si on choisit d'augmenter le seuil de discordance à 3/10, aucun changement n'apparaît (visible sur le schéma ci-dessous),</li>
-			<li>Si on choisit d'augmenter le seuil de discordance à 4/10, on voit apparaître une solution meilleure que toutes les autres et c'est ce que l'on cherche.</li>	
-		</ul>
-		<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>a</b>.
-		<div class="figure center">
-			<img src="Images/part3_dominance_schema.png" align="center"><br>
-		</div>
-	</p>
-		
-	<h3>Deuxième Partie</h3>
-	<p>
-		<br>PARTIE AVEC LES NOUVEAUX POIDS.
-		
-	</p>
-	
+			<br><br>En suite on calcule les matrices de discordance et concordance à partir de cette matrice des jugements qu'on a déjà modifié en enlevant les solutions qui sont fortement dominées, ce qui nous laisse deux matrices avec 5 lignes (correspondantes aux solutions a, b, d, e, h) et 5 colonnes qui correspondent aussi aux mêmes solutions.
+			<br><br><b>Matrice de concordance, valeurs sur 4.</b>
+			<div class="figure center">
+				<img src="Images/concordance1.png" align="center">
+			</div>
+			<br><br><b>Matrice de discordance, valeurs sur 10.</b>
+			<div class="figure center">
+				<img src="Images/discordance1.png" align="center">
+			</div>
+			<br><br>Nous avons pu effectuer tous ces calculs grâce à une fonction que nous avons créée, <i>analyse_multicritère.m</i>
+
+			<br><br>Avec les matrices qu'on vient de calculer et pour construire notre graphe qui va nous permettre trouver la meilleure solution, on prend un seuil de concordance de 3/4 et un seuil de discordance de 2/10. On obtient un graphe qui ne nous permet pas d'obtenir la meilleure solution : en effet les solutions a, b et e sont toutes les trois des solutions non dominées pour les valeurs de ces seuils choisis.
+
+			<br><br>Il y a deux possibilités: ou bien on augmente le seuil de discordance ou on diminue celui de concordance. En regardant les deux matrices on peut voir que si on diminue le seuil de concordance, on va arriver a la moitié de l'echelle (2/4), ce qui signifie que seules deux relations (valant 1) ne seront pas choisies. Cela produirait une mauvaise modélisation. On décide donc de ne pas modifier le seuil de concordance mais plutôt celui de discordance. On va donc choisir un seuil de discordance plus grand que 2/10 :
+			<ul>
+				<li>Si on choisit d'augmenter le seuil de discordance à 3/10, aucun changement n'apparaît (visible sur le schéma ci-dessous),</li>
+				<li>Si on choisit d'augmenter le seuil de discordance à 4/10, on voit apparaître une solution meilleure que toutes les autres et c'est ce que l'on cherche.</li>
+			</ul>
+			<br>Avec ce nouveau seuillage on obtient finallement un graphe qui nous permet voir la meilleure solution parmi toutes les solutions possibles, la solution <b>a</b>.
+			<div class="figure center">
+				<img src="Images/part3_dominance_schema.png" align="center"><br>
+			</div>
+		</p>
+
+		<h3>Deuxième Partie</h3>
+		<p>
+			<br>PARTIE AVEC LES NOUVEAUX POIDS.
+
+		</p>
+
+	</div>
 </div>

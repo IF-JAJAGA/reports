@@ -1,26 +1,28 @@
-<h1>Responsable du personnel</h1>
-<p>
-  L'objectif du responsable du personnel est de minimiser l'utilisation des machines 3 et 5. Pour cela, nous avons choisi de nous baser sur le temps d'utilisation des machines (table T1).
-  Nous avons séparé les temps d'utilisation de M3, M5, et avons aussi considéré la somme des temps d'utilisation de M3 et M5. Le but de la modélisation était donc de minimiser ces temps d'utilisation.
-  Afin de garder une modélisation cohérente avec les objectifs globaux de l'entreprise, nous voulons nous assurer que la solution trouvée ne permettra pas de descendre en dessous d'un certain seuil de bénéfice.
-</p>
-<p>
-  Pour cela, nous avons exécuté linprog 100 fois avec à chaque itération une contrainte sur le bénéfice minimum égale à un pourcentage du bénéfice trouvé pour le comptable.
-  Les paramètres donnés à linprog sont :
-  <ul>
-    <li>f = somme des colonnes M3 et M5 de T1</li>
-    <li>ConstraintsA modifiées</li>
-    <li>ConstraintsB modifiées</li>
-    <li>[] pour Aeq</li>
-    <li>[] pour Beq</li>
-    <li>une matrice 6x1 de zéros pour lb</li>
-  </ul>
-  Les résultats de cette recherche sont montrés dans la figure suivante :
-  <img src='Images/cgt.png'>
-</p>
-<p>
-  On peut voir en vert les résultats pour M3, en rouge pour M5 et en bleu pour M3+M5.
-  Comme on cherche à maximiser le pourcentage du bénéfice (en abcisse) et minimiser le temps d'utilisation (en ordonnée), on marque le point sur M3+M5 qui nous parait optimal, et qui correspond à 80% du bénéfice.
-  On relance donc linprog comme précedemment, mais en modifiant ConstraintsA et ConstraintsB pour empêcher de descendre le bénéfice en dessous de 80%.
-  Les valeurs finales pour les produits sont donc : A = 0, B = 70,9062, C = 0, D = 0, E = 239,0938 et F = 0.
-</p>
+<div class="cgt">
+  <h1>Responsable du personnel</h1>
+  <p>
+    L'objectif du responsable du personnel est de minimiser l'utilisation des machines 3 et 5. Pour cela, nous avons choisi de nous baser sur le temps d'utilisation des machines (table T1).
+    Nous avons séparé les temps d'utilisation de M3, M5, et avons aussi considéré la somme des temps d'utilisation de M3 et M5. Le but de la modélisation était donc de minimiser ces temps d'utilisation.
+    Afin de garder une modélisation cohérente avec les objectifs globaux de l'entreprise, nous voulons nous assurer que la solution trouvée ne permettra pas de descendre en dessous d'un certain seuil de bénéfice.
+  </p>
+  <p>
+    Pour cela, nous avons exécuté linprog 100 fois avec à chaque itération une contrainte sur le bénéfice minimum égale à un pourcentage du bénéfice trouvé pour le comptable.
+    Les paramètres donnés à linprog sont :
+    <ul>
+      <li>f = somme des colonnes M3 et M5 de T1</li>
+      <li>ConstraintsA modifiées</li>
+      <li>ConstraintsB modifiées</li>
+      <li>[] pour Aeq</li>
+      <li>[] pour Beq</li>
+      <li>une matrice 6x1 de zéros pour lb</li>
+    </ul>
+    Les résultats de cette recherche sont montrés dans la figure suivante :
+    <img src='Images/cgt.png'>
+  </p>
+  <p>
+    On peut voir en vert les résultats pour M3, en rouge pour M5 et en bleu pour M3+M5.
+    Comme on cherche à maximiser le pourcentage du bénéfice (en abcisse) et minimiser le temps d'utilisation (en ordonnée), on marque le point sur M3+M5 qui nous parait optimal, et qui correspond à 80% du bénéfice.
+    On relance donc linprog comme précedemment, mais en modifiant ConstraintsA et ConstraintsB pour empêcher de descendre le bénéfice en dessous de 80%.
+    Les valeurs finales pour les produits sont donc : A = 0, B = 70,9062, C = 0, D = 0, E = 239,0938 et F = 0.
+  </p>
+</div>
