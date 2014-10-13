@@ -80,6 +80,9 @@ body {
 	clear: both;
 }
 
+ul {
+	line-height: 1.5em;
+}
 ul.unstyled {
 	list-style-type: none;
 }
