@@ -1,21 +1,21 @@
 @page {
 	margin: 2cm;
-	@top-left {
+	@top-center {
 		font-size: 0.8em;
-		content: "GUIDON J.- BERTRON A.- MARCHAL J.- PARISSE A.- MONOD G.-COURJAULT A.- REVEL A.";
+		content: "Jérôme G. - Aurélien B. - Jean M. - Alicia P. - Gustave M. - Amaury C. - Alberto R.";
 	}
 	@bottom-center {
 		content: counter(page) " / " counter(pages);
 	}
 }
 @page:first {
-	@top-left {
+	@top-center {
 		content: none
 	}
 	@bottom-center {
 		content: none
 	}
-}		
+}
 body {
 	width:100%;
 }
